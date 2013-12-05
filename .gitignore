@@ -1,0 +1,7 @@
+*.pyc
+bin/
+lib/
+share/
+.celerybeat-schedule
+*.db
+fitbout/local_settings.py

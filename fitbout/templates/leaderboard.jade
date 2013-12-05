@@ -1,0 +1,82 @@
+extends base.jade
+- load humanize
+
+block head
+    link(href='/static/css/leaderboard.css', rel='stylesheet', media='screen')
+
+block content
+  .page-header
+    h2 Leaderboard
+
+  h3 Men's Division
+  .panel.panel-default
+    .panel-heading Overall
+    table.table
+      tbody
+        for rank, user in male_steps
+          tr
+            td
+              span
+                h4 {{ rank }}
+            td
+              img(src=user.avatar)
+            td
+              span {{ user.username }}
+            td
+              span{{ user.steps|intcomma }} steps
+
+  .panel.panel-default
+    .panel-heading Daily
+    table.table
+      tbody
+        for rank, user in male_most_steps
+          tr
+            td
+              span
+                h4 {{ rank }}
+            td
+              img(src=user.avatar)
+            td
+              span {{ user.username }}
+            td
+              span{{ user.most_steps|intcomma }} steps
+
+  h3 Women's Division
+  .panel.panel-default
+    .panel-heading Overall
+    table.table
+      tbody
+        for rank, user in female_steps
+          tr
+            td
+              span
+                h4 {{ rank }}
+            td
+              img(src=user.avatar)
+            td
+              span {{ user.username }}
+            td
+              span{{ user.steps|intcomma }} steps
+
+  .panel.panel-default
+    .panel-heading Daily
+    table.table
+      tbody
+
+        for rank, user in female_most_steps
+          tr
+            td
+              span
+                h4 {{ rank }}
+            td
+              img(src=user.avatar)
+            td
+              span {{ user.username }}
+            td
+              span{{ user.most_steps|intcomma }} steps
+
+block scripts
+  script(src='/static/js/raphael.min.js', type='text/javascript')
+  script(src='/static/js/g.raphael.min.js', type='text/javascript')
+  script(src='/static/js/g.bar.min.js', type='text/javascript')
+  script(src='/static/js/leaderboard.js', type='text/javascript')

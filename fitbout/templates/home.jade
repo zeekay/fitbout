@@ -1,0 +1,10 @@
+extends base.jade
+- load humanize
+
+block content
+  .page-header
+    h2 Welcome back, {{ user.username }}!
+
+  .jumbotron
+    p So far you've logged {{ user.steps|intcomma }} steps, are you trying to break a personal record or something?
+    p Way to go!
