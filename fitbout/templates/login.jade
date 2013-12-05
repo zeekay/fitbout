@@ -1,0 +1,20 @@
+- load url from future
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content="width=device-width, initial-scale=1.0")
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='shortcut icon', href='/static/ico/favicon.png')
+
+    title Fitbout
+
+    link(href='/static/css/bootstrap.min.css', rel='stylesheet', media='screen')
+    link(href='/static/css/login.css', rel='stylesheet', media='screen')
+
+  body
+    .container
+      form.form-signin(action="{% url 'social:begin' 'fitbit' %}")
+        h2.form-signin-heading Fitbout
+        button.btn.btn-lg.btn-primary.btn-block(type="submit") Login with Fitbit

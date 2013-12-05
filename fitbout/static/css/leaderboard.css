@@ -1,0 +1,15 @@
+.table tbody > tr > td {
+  vertical-align: middle;
+  text-align: left;
+}
+
+td span {
+  height: 50px;
+  vertical-align: middle;
+  display:table-cell;
+}
+
+td img {
+  height: 50px;
+  width: 50px;
+}
