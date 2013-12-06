@@ -1,5 +1,5 @@
 from celery import shared_task
-from datetime import datetime
+from datetime import datetime, timedelta
 from mongoengine import NotUniqueError
 
 from .models import Activity, Competition, User
@@ -33,8 +33,10 @@ def update_activities():
     Update activities for all users.
     '''
     now = datetime.utcnow()
+
     for user in User.objects.all():
-        update_activity(user, now)
+        for date in date_range(now - timedelta(days=3), now):
+            update_activity(user, date)
 
 
 @shared_task()
