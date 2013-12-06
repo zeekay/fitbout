@@ -8,7 +8,7 @@ sys.path.insert(0, '..')
 
 root = lambda p: join(dirname(abspath(__file__)), p)
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
