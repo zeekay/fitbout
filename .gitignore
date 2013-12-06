@@ -3,5 +3,6 @@ bin/
 lib/
 share/
 .celerybeat-schedule
+.celerybeat.pid
 *.db
 fitbout/local_settings.py
